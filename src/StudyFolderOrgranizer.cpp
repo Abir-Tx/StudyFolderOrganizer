@@ -3,7 +3,7 @@ Anyone can modify this codes to meet their needs if they like the idea of the so
 
 #include <iostream>
 #include <iomanip>
-#include "home.h"
+#include "../include/home.h"
 
 
 void homeDesign(){
@@ -13,5 +13,6 @@ void homeDesign(){
 
 int main(){
     homeDesign();
+    home();
     system("pause");
 }
