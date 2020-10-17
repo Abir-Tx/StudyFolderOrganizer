@@ -9,6 +9,7 @@
 #include "../include/create.hpp"
 void home()
 {
+    system("cls");
     std::cout << "Your Options: " << std::endl;
 
     std::vector<std::string> homeOptions = {"Create Mode", "About"};
