@@ -11,6 +11,7 @@ int subjectNumber;
 std::vector<std::string> subjects;
 std::string subjectName;
 std::vector<std::string> selectedFoldersName;
+std::string termFoldersName;
 int selectedFoldersNumber;
 bool isManualCreationChoice = false;
 
@@ -24,7 +25,10 @@ void createFolder()
 
 
     std::cout << "Do you want to manually specify folders under terms sections?" << std::endl;
-    std::string yesNoOption = {"Yes", "No"};
+    std::vector<std::string> yesNoOption;
+    yesNoOption.push_back("Yes");
+    yesNoOption.push_back("No");
+
     for (int i = 0; i < yesNoOption.size(); i++)
     {
         std::cout << (i + 1) << ". " << yesNoOption[i] << std::endl;
@@ -33,7 +37,7 @@ void createFolder()
     std::cin >> choice;
     if (choice == 1)
     {
-        manualCreationChoice = true;
+        isManualCreationChoice = true;
     }
     else if (choice == 2)
     {
@@ -49,11 +53,11 @@ void createFolder()
     {
         std::cout << "How many folders you wanna create inside the Term Folders (Lessons Excluded): ";
         std::cin >> selectedFoldersNumber;
-        for (int i = 0; i < selectedFolderNumber; i++)
+        for (int i = 0; i < selectedFoldersNumber; i++)
         {
             std::cout << "Enter name of folder no: " << (i + 1);
-            std::cin >> selectedFoldersName;
-            subjects.push_back(selectedFoldersName);
+            std::cin >> termFoldersName;
+            selectedFoldersName.push_back(termFoldersName);
         }
     }
     else
@@ -61,7 +65,7 @@ void createFolder()
         std::cout << "Going with automatic creation";
         std::cout << std::endl;
         //Preloading the lessons folder
-        selectedFolders.push_back("Lessons");
+        selectedFoldersName.push_back("Lessons");
     }
 
 
@@ -107,10 +111,16 @@ void createFolder()
 
     //Inside Term Folders Creation
 
-    for (int i = 0; i < selectedFoldersNumber; i++)
+    for (int i = 0; i < selectedFoldersName.size(); i++)
     {
         std::string midTermPath = "D:\\University Study\\Study Materials\\1st Year\\" +
-                                  semester + "th Semester\\" + subjects[i] + "\\Mid-Term\\" + selectedFolders[i];
+                                  semester + "th Semester\\" + subjects[i] + "\\Mid-Term\\" + selectedFoldersName[i];
+        _mkdir(midTermPath.c_str());
+    }
+    for (int i = 0; i < selectedFoldersName.size(); i++)
+    {
+        std::string midTermPath = "D:\\University Study\\Study Materials\\1st Year\\" +
+                                  semester + "th Semester\\" + subjects[i] + "\\Final\\" + selectedFoldersName[i];
         _mkdir(midTermPath.c_str());
     }
 }
