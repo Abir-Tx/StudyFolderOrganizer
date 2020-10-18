@@ -17,13 +17,9 @@ std::string termFoldersName;
 int selectedFoldersNumber;
 bool isManualCreationChoice = false;
 
-std::string driveLetter;
 
-void createFolder()
+void createFolder(std::string driveLetter)
 {
-    std::cout<<"What is your drive letter: ";
-    std::cin>>driveLetter;
-    
     std::cout << "Which year: ";
     std::cin >> year;
     /* if (year<1 || year > 4 )     //Can't do this as year is string value

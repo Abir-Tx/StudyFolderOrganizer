@@ -7,6 +7,8 @@
 
 //User Defined Headers
 #include "../include/create.hpp"
+#include "../include/driveLetterTaker.hpp"
+#include "../include/rootDirCreator.hpp"
 void home()
 {
     system("cls");
@@ -22,12 +24,14 @@ void home()
     int choice;
     std::cin >> choice;
     std::cout << std::endl;
-    
+
     switch (choice)
     {
     case 1:
     {
-        createFolder();
+        driveTaker();
+        rootDirCreator();
+        createFolder(driveLetter);
     }
     break;
     default:
