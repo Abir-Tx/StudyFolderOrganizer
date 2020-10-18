@@ -17,10 +17,15 @@ std::string termFoldersName;
 int selectedFoldersNumber;
 bool isManualCreationChoice = false;
 
+std::string driveLetter;
+
 void createFolder()
 {
-    std::cout<<"Which year: ";
-    std::cin>>year;
+    std::cout<<"What is your drive letter: ";
+    std::cin>>driveLetter;
+    
+    std::cout << "Which year: ";
+    std::cin >> year;
     /* if (year<1 || year > 4 )     //Can't do this as year is string value
     {
         std::cout<<"Year cannot be more than 4 or less than 1"
@@ -38,7 +43,7 @@ void createFolder()
     int theoryOrLab;
     std::cin >> theoryOrLab;
 
-    if (theoryOrLab == 2)   //THEORY
+    if (theoryOrLab == 2) //THEORY
     {
         std::cout << "Do you want to manually specify folders under terms sections?" << std::endl;
         std::vector<std::string> yesNoOption;
@@ -95,26 +100,27 @@ void createFolder()
         // creating folders
         std::cout << "Creating the folders......" << std::endl;
         system("cls");
-        
+        std::string parentDir = driveLetter+":\\University Study\\Study Materials\\";
+
         //Year Creation
-        std::string yearPath = "D:\\University Study\\Study Materials\\"+year;
+        std::string yearPath =parentDir + year;
 
         _mkdir(yearPath.append("st Year").c_str());
 
         //Semester Folder Creation
-        std::string semesterPath = "D:\\University Study\\Study Materials\\"+year+"st Year\\" + semester;
+        std::string semesterPath = parentDir + year + "st Year\\" + semester;
 
         _mkdir(semesterPath.append("th Semester").c_str());
 
         //Theory Creation
-        std::string theoryPath = "D:\\University Study\\Study Materials\\"+year+"st Year\\" + semester+ "th Semester\\" + "Theory";
+        std::string theoryPath = parentDir + year + "st Year\\" + semester + "th Semester\\" + "Theory";
 
         _mkdir(theoryPath.c_str());
 
         //Subject creation
         for (int i = 0; i < subjects.size(); i++)
         {
-            std::string subjectPath = "D:\\University Study\\Study Materials\\"+year+"st Year\\" +
+            std::string subjectPath = parentDir + year + "st Year\\" +
                                       semester + "th Semester\\" + "Theory\\" + subjects[i];
 
             _mkdir(subjectPath.c_str());
@@ -123,14 +129,14 @@ void createFolder()
         //Term creation
         for (int i = 0; i < subjects.size(); i++)
         {
-            std::string midTermPath = "D:\\University Study\\Study Materials\\"+year+"st Year\\" +
-                                      semester + "th Semester\\"  + "Theory\\" + subjects[i] + "\\Mid-Term";
+            std::string midTermPath = parentDir + year + "st Year\\" +
+                                      semester + "th Semester\\" + "Theory\\" + subjects[i] + "\\Mid-Term";
             _mkdir(midTermPath.c_str());
         }
         for (int i = 0; i < subjects.size(); i++)
         {
-            std::string finalTermPath = "D:\\University Study\\Study Materials\\"+year+"st Year\\" +
-                                        semester + "th Semester\\"  + "Theory\\" + subjects[i] + "\\Final";
+            std::string finalTermPath = parentDir + year + "st Year\\" +
+                                        semester + "th Semester\\" + "Theory\\" + subjects[i] + "\\Final";
             _mkdir(finalTermPath.c_str());
         }
 
@@ -143,12 +149,12 @@ void createFolder()
             {
                 for (int j = 0; j < selectedFoldersNumber; j++)
                 {
-                    std::string midTermPath = "D:\\University Study\\Study Materials\\"+year+"st Year\\" +
-                                              semester + "th Semester\\"  + "Theory\\" + subjects[i] + "\\Mid-Term\\" + selectedFoldersName[j];
+                    std::string midTermPath = parentDir + year + "st Year\\" +
+                                              semester + "th Semester\\" + "Theory\\" + subjects[i] + "\\Mid-Term\\" + selectedFoldersName[j];
                     _mkdir(midTermPath.c_str());
 
-                    std::string finalTermPath = "D:\\University Study\\Study Materials\\"+year+"st Year\\" +
-                                                semester + "th Semester\\"  + "Theory\\" + subjects[i] + "\\Final\\" + selectedFoldersName[j];
+                    std::string finalTermPath = parentDir + year + "st Year\\" +
+                                                semester + "th Semester\\" + "Theory\\" + subjects[i] + "\\Final\\" + selectedFoldersName[j];
                     _mkdir(finalTermPath.c_str());
                 }
                 k++;
