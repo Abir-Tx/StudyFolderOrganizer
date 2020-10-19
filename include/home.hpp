@@ -4,14 +4,26 @@
 #include <iostream>
 #include <vector>
 #include <direct.h>
+#include <iomanip>
 
 //User Defined Headers
 #include "../include/create.hpp"
 #include "../include/driveLetterTaker.hpp"
 #include "../include/rootDirCreator.hpp"
+#include "../include/abut.hpp"
+
+void homeDesign()
+{
+    std::string title = "Study Folder Organizer";
+    std::cout << std::setw(80) << std::setfill(' ') << title << std::endl
+              << std::endl;
+}
+
 void home()
 {
     system("cls");
+    homeDesign();
+
     std::cout << "Your Options: " << std::endl;
 
     std::vector<std::string> homeOptions = {"Create Mode", "About"};
@@ -34,6 +46,9 @@ void home()
         createFolder(driveLetter);
     }
     break;
+    case 2:
+        about();
+        break;
     default:
         std::cout << "Invalid";
         break;

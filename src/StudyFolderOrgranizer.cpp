@@ -2,17 +2,9 @@
 Anyone can modify this codes to meet their needs if they like the idea of the software */
 
 #include <iostream>
-#include <iomanip>
 #include "../include/home.hpp"
 
-
-void homeDesign(){
-    std::string title = "Study Folder Organizer";
-    std::cout<<std::setw(80)<<std::setfill(' ')<<title<<std::endl<<std::endl;
-}
-
 int main(){
-    homeDesign();
     home();
     system("pause");
 }
