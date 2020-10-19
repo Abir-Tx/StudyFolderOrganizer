@@ -1,0 +1,53 @@
+#ifndef RES_RC
+#define RES_RC
+
+
+#include <winver.h>
+#include <ntdef.h>
+MAINICON ICON "icon.ico"
+
+
+
+
+//
+// Set up debug information
+//
+#if DBG
+#define VER_DBG VS_FF_DEBUG
+#else
+#define VER_DBG 0
+#endif
+
+// ------- version info -------------------------------------------------------
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION             1,0,0,0
+PRODUCTVERSION          1,0,0,0
+FILEFLAGSMASK           VS_FFI_FILEFLAGSMASK
+FILEFLAGS               VER_DBG
+FILEOS                  VOS_NT
+FILETYPE                VFT_DRV
+FILESUBTYPE             VFT2_DRV_SYSTEM
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904b0"
+        BEGIN
+		VALUE "Comments",         "Create organized folder for study under a minuite"
+		VALUE "CompanyName",      "Xtrex Codes"
+		VALUE "FileDescription",  "SFO App"
+		VALUE "FileVersion",      "V1.0.1"
+		VALUE "InternalName",     "Study Folder Organizer"
+		VALUE "LegalCopyright",   "(C)2020, Mushfiqur Rahman Abir"
+		VALUE "OriginalFilename", "StudyFolderOrganizer.exe"
+		VALUE "ProductName",      "Study Folder Organizer"
+		VALUE "ProductVersion",	  "V1.0.1"
+        END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x0409,1200
+	END
+END
+
+#endif
