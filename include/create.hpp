@@ -32,8 +32,6 @@ void createFolder(std::string driveLetter)
 
     std::cout << "Enter Semester Number: ";
     std::cin >> semester;
-    std::cout << "How Many Theory Subjects have you got: ";
-    std::cin >> subjectNumber;
 
     std::string parentDir = driveLetter + ":\\University Study\\Study Materials\\";
 
@@ -52,6 +50,7 @@ void createFolder(std::string driveLetter)
     std::cout << "2. Theory" << std::endl;
 
     int theoryOrLab = 0;
+    std::cout<<"Enter your choice: ";
     std::cin >> theoryOrLab;
 
     switch (theoryOrLab)
@@ -63,7 +62,7 @@ void createFolder(std::string driveLetter)
 
             for (int i = 0; i < labSubjectsNumber; i++)
             {
-                std::cout << "Enter Lab Subjects no: " << (i + 1) << " name: ";
+                std::cout << "Enter Lab Subject no " << (i + 1) << " name: ";
                 std::cin >> labSubjectsName;
                 labSubjects.push_back(labSubjectsName);
             }
@@ -92,6 +91,8 @@ void createFolder(std::string driveLetter)
         }
         case 2:
         {
+            std::cout << "How Many Theory Subjects have you got: ";
+            std::cin >> subjectNumber;
             std::cout << "Do you want to manually specify folders under terms sections?" << std::endl;
             std::vector<std::string> yesNoOption;
             yesNoOption.push_back("Yes");
@@ -102,6 +103,7 @@ void createFolder(std::string driveLetter)
                 std::cout << (i + 1) << ". " << yesNoOption[i] << std::endl;
             }
             int choice;
+            std::cout<<"Enter your choice: ";
             std::cin >> choice;
             if (choice == 1)
             {
@@ -130,7 +132,7 @@ void createFolder(std::string driveLetter)
             }
             else
             {
-                std::cout << "Going with automatic creation";
+                std::cout << "(Going with automatic creation....)";
                 std::cout << std::endl;
                 //Preloading the lessons folder
                 selectedFoldersNumber = 1;
