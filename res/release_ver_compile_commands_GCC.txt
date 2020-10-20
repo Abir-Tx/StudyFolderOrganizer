@@ -1,3 +1,3 @@
 windres .\res\res.rc .\bin\res.o
 g++ -c .\src\StudyFolderOrgranizer.cpp -o .\bin\app.o
-g++ .\bin\res.o .\bin\app.o -o dapp.exe -finline-functions
+g++ -m32 -v .\bin\res.o .\bin\app.o -o .\bin\SFO.exe -finline-functions -static-libgcc -static-libstdc++
