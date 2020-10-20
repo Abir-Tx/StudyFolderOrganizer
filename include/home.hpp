@@ -33,7 +33,7 @@ void home()
     {
         std::cout << (i + 1) << ". " << homeOptions[i] << std::endl;
     }
-    std::cout << "Your choice: " << std::endl;
+    std::cout << "Your choice: ";
     int choice;
     std::cin >> choice;
     std::cout << std::endl;
@@ -42,6 +42,11 @@ void home()
     {
     case 1:
     {
+        system("cls");
+        std::cout << std::setw(80) << std::setfill(' ') << "Create Mode";
+        std::cout << std::endl;
+
+
         driveTaker();
         rootDirCreator();
         createFolder(driveLetter);
