@@ -14,6 +14,7 @@
 
 void homeDesign()
 {
+    system("color 04");
     system("title Study Folder Organizer");
     std::string title = "Study Folder Organizer";
     std::cout << std::setw(80) << std::setfill(' ') << title << std::endl
