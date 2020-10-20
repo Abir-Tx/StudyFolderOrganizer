@@ -83,10 +83,19 @@ void createFolder(std::string driveLetter)
                 _mkdir(labSubjectPath.c_str());
             }
 
-            /* std::string Teststs = parentDir + year + "st Year\\" + semester + "th Semester\\" + "Lab\\"+labSubjects[0];
-                        _mkdir(Teststs.c_str());
-                        std::cout<<"HEY";
-                        system("pause"); */
+            //Term creation
+            for (int i = 0; i < labSubjectsNumber; i++)
+            {
+                std::string labMidTermPath = parentDir + year + "st Year\\" +
+                                        semester + "th Semester\\" + "Lab\\" + labSubjects[i] + "\\Mid-Term";
+                _mkdir(labMidTermPath.c_str());
+            }
+            for (int i = 0; i < labSubjectsNumber; i++)
+            {
+                std::string labFinalTermPath = parentDir + year + "st Year\\" +
+                                            semester + "th Semester\\" + "Lab\\" + labSubjects[i] + "\\Final";
+                _mkdir(labFinalTermPath.c_str());
+            }
             break;
         }
         case 2:
