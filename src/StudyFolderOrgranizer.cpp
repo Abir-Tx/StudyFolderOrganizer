@@ -6,5 +6,4 @@ Anyone can modify this codes to meet their needs if they like the idea of the so
 
 int main(){
     home();
-    system("pause");
 }

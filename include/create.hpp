@@ -220,12 +220,12 @@ void createFolder(std::string driveLetter)
                 break;
             }
         }
-            std::cout<<"SUCCESSFULLY executed the requested tasks"<<std::endl;
+            std::cout<<"SUCCESSFULLY executed the requested tasks....."<<std::endl;
             std::cout<<std::endl;
             system("color 09");
             std::cout<<std::endl;
             std::cout<<std::endl;
-            std::cout<<"Do you want to create Theory subjects as well?";
+            std::cout<<"Do you want to create more folders?";
             std::cout<<std::endl;
             std::cout<<"1. Yes, take me there";
             std::cout<<std::endl;
@@ -234,6 +234,12 @@ void createFolder(std::string driveLetter)
             std::cout<<std::endl;
             std::cout<<"Your choice: ";
             std::cin>>gotoLabOrTheory;
+            system("cls");
+
+            if (gotoLabOrTheory == 2)
+            {
+                exit(0);
+            }
     } while (gotoLabOrTheory == 1);
 
 
