@@ -2,6 +2,7 @@
 ::This works only on windows & matching the dir told in the section 2
 ::This batch file compile the SFO project with rc file and details and icons making it ready for redistibuting
 
+cls
 ::Section 1: Designing
 title SFO Release Version Builder
 color 04
