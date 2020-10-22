@@ -5,6 +5,8 @@
 #include <vector>
 #include <direct.h>
 
+//User Defined header
+
 //variables
 std::string year;
 std::string semester;
@@ -216,7 +218,9 @@ void createFolder(std::string driveLetter)
             }
             default:
             {
-                std::cout << "Invalid Choice";
+                std::cout << "Invalid Choice ! Exiting the program.........";
+                std::cout<<std::endl;
+                exit(0);
                 break;
             }
         }
@@ -231,6 +235,8 @@ void createFolder(std::string driveLetter)
             std::cout<<std::endl;
             std::cout<<"2. No, I want to exit";
             std::cout<<std::endl;
+            std::cout<<"3. Take me to home screen";
+            std::cout<<std::endl;
             std::cout<<std::endl;
             std::cout<<"Your choice: ";
             std::cin>>gotoLabOrTheory;
@@ -239,6 +245,10 @@ void createFolder(std::string driveLetter)
             if (gotoLabOrTheory == 2)
             {
                 exit(0);
+            }
+            else if(gotoLabOrTheory == 3)
+            {
+                break;
             }
     } while (gotoLabOrTheory == 1);
 
