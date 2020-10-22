@@ -12,19 +12,27 @@ void dirTree()
 
     ifstream driveLetterReader("C:\\SFO\\Data\\DriveLetterKeeper.dat");
 
-    while(getline(driveLetterReader, driveLetterHolder))
+    while (getline(driveLetterReader, driveLetterHolder))
     {
         driveLetterHolder = driveLetterHolder;
     }
+    if (driveLetterHolder.empty() == true)
+    {
+        system("cls");
+        cout << "You have not created ant folders yet. Please go to the create mode to create folders first!3" << endl;
+    }
+    else
+    {
+        //Starting the dir tree
+        system("cls");
+        system("color 03");
+        cout << setw(75) << setfill(' ') << "Directory Tree Viewer" << endl
+             << endl;
 
-    //Starting the dir tree
-    system("cls");
-    system("color 03");
-    cout<<setw(75)<<setfill(' ')<<"Directory Tree Viewer"<<endl<<endl;
-
-    cout<<"Printing the folders structure view inside the selected drive: "<<endl;
-    std::cout<<std::endl;
-    string treeDir = "tree /f "+driveLetterHolder+":\\\"University Study\"";
-    system(treeDir.c_str());
+        cout << "Printing the folders structure view inside the selected drive: " << endl;
+        std::cout << std::endl;
+        string treeDir = "tree /f " + driveLetterHolder + ":\\\"University Study\"";
+        system(treeDir.c_str());
+    }
 }
 #endif // DIRTREE_H
