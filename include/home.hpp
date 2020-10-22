@@ -5,6 +5,7 @@
 #include <vector>
 #include <direct.h>
 #include <iomanip>
+#include "../include/dirTree.hpp"
 
 //User Defined Headers
 #include "../include/create.hpp"
@@ -28,7 +29,7 @@ void home()
 
     std::cout << "Your Options: " << std::endl;
 
-    std::vector<std::string> homeOptions = {"Create Mode", "About"};
+    std::vector<std::string> homeOptions = {"Create Mode", "About", "Directory Tree", "Exit"};
 
     for (int i = 0; i < homeOptions.size(); i++)
     {
@@ -55,6 +56,15 @@ void home()
     break;
     case 2:
         about();
+        break;
+    case 3:
+        dirTree();
+        break;
+    case 4:
+        system("cls");
+        system("color 04");
+        std::cout<<"Exitin the program.......";
+        exit(0);
         break;
     default:
         std::cout << "Invalid";
