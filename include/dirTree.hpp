@@ -19,7 +19,7 @@ void dirTree()
     if (driveLetterHolder.empty() == true)
     {
         system("cls");
-        cout << "You have not created ant folders yet. Please go to the create mode to create folders first!3" << endl;
+        cout << "You have not created ant folders yet. Please go to the create mode to create folders first!" << endl;
     }
     else
     {
