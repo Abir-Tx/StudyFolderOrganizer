@@ -53,6 +53,7 @@ void createFolder(std::string driveLetter) {
     std::cout << "Lab or Theory: " << std::endl;
     std::cout << "1. Lab" << std::endl;
     std::cout << "2. Theory" << std::endl;
+    std::cout << "3. Lab & Theory (Auto Creation at once)" << std::endl;
 
     int theoryOrLab = 0;
     std::cout << "Enter your choice: ";
@@ -100,7 +101,7 @@ void createFolder(std::string driveLetter) {
           selectedFoldersName_Lab.push_back(termFoldersName);
         }
       } else {
-        std::cout << "(Going with automatic creation....)";
+        std::cout << "\t\t\t\t\t\t\t\t(Going with automatic creation....)";
         std::cout << std::endl;
         // Preloading the lessons folder
         selectedFoldersNumber_Lab = 1;
@@ -201,7 +202,7 @@ void createFolder(std::string driveLetter) {
           selectedFoldersName.push_back(termFoldersName);
         }
       } else {
-        std::cout << "(Going with automatic creation....)";
+        std::cout << "\t\t\t\t\t\t\t\t(Going with automatic creation....)";
         std::cout << std::endl;
         // Preloading the lessons folder
         selectedFoldersNumber = 1;
@@ -266,6 +267,87 @@ void createFolder(std::string driveLetter) {
           k++;
         }
       }
+      break;
+    }
+    case 3: {
+      /*Creates both lab and theory folders automatically
+      within one click with basic and clean folder structure */
+
+      using namespace std;
+      system("cls");
+      cout << setw(70) << setfill(' ') << "Auto Creation Mode" << endl;
+
+      // Lab Section
+      std::cout << "How many Lab subjects have you got: ";
+      std::cin >> labSubjectsNumber;
+      for (int i = 0; i < labSubjectsNumber; i++) {
+        std::cout << "Enter Lab Subject no " << (i + 1) << " name: ";
+        std::cin >> labSubjectsName;
+        labSubjects.push_back(labSubjectsName);
+      }
+      // Lab Creation
+      std::string labPath =
+          parentDir + year + "st Year\\" + semester + "th Semester\\" + "Lab";
+
+      _mkdir(labPath.c_str());
+      // Subject creation
+      for (int i = 0; i < labSubjectsNumber; i++) {
+        std::string labSubjectPath = parentDir + year + "st Year\\" + semester +
+                                     "th Semester\\" + "Lab\\" + labSubjects[i];
+
+        _mkdir(labSubjectPath.c_str());
+      }
+      // Term creation
+      for (int i = 0; i < labSubjectsNumber; i++) {
+        std::string labMidTermPath = parentDir + year + "st Year\\" + semester +
+                                     "th Semester\\" + "Lab\\" +
+                                     labSubjects[i] + "\\Mid-Term";
+        _mkdir(labMidTermPath.c_str());
+      }
+      for (int i = 0; i < labSubjectsNumber; i++) {
+        std::string labFinalTermPath = parentDir + year + "st Year\\" +
+                                       semester + "th Semester\\" + "Lab\\" +
+                                       labSubjects[i] + "\\Final";
+        _mkdir(labFinalTermPath.c_str());
+      }
+
+      // Theory Section
+      std::cout << "How Many Theory Subjects have you got: ";
+      std::cin >> subjectNumber;
+      for (int i = 0; i < subjectNumber; i++) {
+        std::cout << "Enter subject no " << (i + 1) << " name: ";
+        std::cin >> subjectName;
+        subjects.push_back(subjectName);
+      }
+
+      // Theory Creation
+      std::string theoryPath = parentDir + year + "st Year\\" + semester +
+                               "th Semester\\" + "Theory";
+
+      _mkdir(theoryPath.c_str());
+
+      // Subject creation
+      for (int i = 0; i < subjects.size(); i++) {
+        std::string subjectPath = parentDir + year + "st Year\\" + semester +
+                                  "th Semester\\" + "Theory\\" + subjects[i];
+
+        _mkdir(subjectPath.c_str());
+      }
+
+      // Term creation
+      for (int i = 0; i < subjects.size(); i++) {
+        std::string midTermPath = parentDir + year + "st Year\\" + semester +
+                                  "th Semester\\" + "Theory\\" + subjects[i] +
+                                  "\\Mid-Term";
+        _mkdir(midTermPath.c_str());
+      }
+      for (int i = 0; i < subjects.size(); i++) {
+        std::string finalTermPath = parentDir + year + "st Year\\" + semester +
+                                    "th Semester\\" + "Theory\\" + subjects[i] +
+                                    "\\Final";
+        _mkdir(finalTermPath.c_str());
+      }
+      system("cls");
       break;
     }
     default: {
