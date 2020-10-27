@@ -67,6 +67,64 @@ void createFolder(std::string driveLetter)
                 std::cout << "How many Lab subjects have you got: ";
                 std::cin >> labSubjectsNumber;
 
+                //Manual or Auto:
+                std::vector<std::string> selectedFoldersName_Lab;
+                bool isManualCreationChoice_Lab = false;
+                int selectedFoldersNumber_Lab;
+
+
+                std::cout << "Do you want to manually specify folders under terms sections?" << std::endl;
+                std::vector<std::string> yesNoOption;
+                yesNoOption.push_back("Yes");
+                yesNoOption.push_back("No");
+
+                for (int i = 0; i < yesNoOption.size(); i++)
+                {
+                    std::cout << (i + 1) << ". " << yesNoOption[i] << std::endl;
+                }
+                int choice;
+                std::cout<<"Enter your choice: ";
+                std::cin >> choice;
+                if (choice == 1)
+                {
+                    isManualCreationChoice_Lab = true;
+                }
+                else if (choice == 2)
+                {
+                    isManualCreationChoice_Lab = false;
+                }
+                else
+                {
+                    std::cout << "Bad input. Going with automatic creation" << std::endl;
+                    isManualCreationChoice_Lab = true;
+                }
+
+                if (isManualCreationChoice_Lab == true)
+                {
+                    std::cout << "How many folders you wanna create inside the Term Folders (Lessons Excluded): ";
+                    std::cin >> selectedFoldersNumber_Lab;
+                    for (int i = 0; i < selectedFoldersNumber_Lab; i++)
+                    {
+                        std::cout << "Enter name of folder no " << (i + 1) << ": ";
+                        std::cin >> termFoldersName;
+                        selectedFoldersName_Lab.push_back(termFoldersName);
+                    }
+                }
+                else
+                {
+                    std::cout << "(Going with automatic creation....)";
+                    std::cout << std::endl;
+                    //Preloading the lessons folder
+                    selectedFoldersNumber_Lab = 1;
+                    selectedFoldersName_Lab.push_back("Tab_Tasks");
+                }
+
+
+
+
+
+
+
                 for (int i = 0; i < labSubjectsNumber; i++)
                 {
                     std::cout << "Enter Lab Subject no " << (i + 1) << " name: ";
@@ -102,6 +160,27 @@ void createFolder(std::string driveLetter)
                     std::string labFinalTermPath = parentDir + year + "st Year\\" +
                                                 semester + "th Semester\\" + "Lab\\" + labSubjects[i] + "\\Final";
                     _mkdir(labFinalTermPath.c_str());
+                }
+
+                //Inside Term Folders Creation
+
+                for (int i = 0; i <labSubjects.size(); i++)
+                {
+                    int k = 0;
+                    while (k != selectedFoldersNumber_Lab)
+                    {
+                        for (int j = 0; j < selectedFoldersNumber_Lab; j++)
+                        {
+                            std::string midTermPath = parentDir + year + "st Year\\" +
+                                            semester + "th Semester\\" + "Lab\\" + labSubjects[i] + "\\Mid-Term\\" + selectedFoldersName_Lab[j];
+                            _mkdir(midTermPath.c_str());
+
+                            std::string finalTermPath = parentDir + year + "st Year\\" +
+                                                semester + "th Semester\\" + "Lab\\" + labSubjects[i] + "\\Final\\" + selectedFoldersName_Lab[j];
+                            _mkdir(finalTermPath.c_str());
+                        }
+                        k++;
+                    }
                 }
                 break;
             }
