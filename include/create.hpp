@@ -55,7 +55,6 @@ void createFolder(std::string driveLetter) {
     std::cout << "2. Theory" << std::endl;
     std::cout << "3. Lab & Theory (Auto Creation at once)" << std::endl;
 
-
     int theoryOrLab = 0;
     std::cout << "Enter your choice: ";
     std::cin >> theoryOrLab;
@@ -102,7 +101,7 @@ void createFolder(std::string driveLetter) {
           selectedFoldersName_Lab.push_back(termFoldersName);
         }
       } else {
-        std::cout <<"\t\t\t\t\t\t\t\t(Going with automatic creation....)";
+        std::cout << "\t\t\t\t\t\t\t\t(Going with automatic creation....)";
         std::cout << std::endl;
         // Preloading the lessons folder
         selectedFoldersNumber_Lab = 1;
@@ -203,7 +202,7 @@ void createFolder(std::string driveLetter) {
           selectedFoldersName.push_back(termFoldersName);
         }
       } else {
-        std::cout <<"\t\t\t\t\t\t\t\t(Going with automatic creation....)";
+        std::cout << "\t\t\t\t\t\t\t\t(Going with automatic creation....)";
         std::cout << std::endl;
         // Preloading the lessons folder
         selectedFoldersNumber = 1;
@@ -270,15 +269,15 @@ void createFolder(std::string driveLetter) {
       }
       break;
     }
-    case 3:{      
+    case 3: {
       /*Creates both lab and theory folders automatically
-     within one click with basic and clean folder structure */
+      within one click with basic and clean folder structure */
 
       using namespace std;
       system("cls");
-      cout<<setw(70)<<setfill(' ')  <<"Auto Creation Mode"<<endl;
-      
-      //Lab Section
+      cout << setw(70) << setfill(' ') << "Auto Creation Mode" << endl;
+
+      // Lab Section
       std::cout << "How many Lab subjects have you got: ";
       std::cin >> labSubjectsNumber;
       for (int i = 0; i < labSubjectsNumber; i++) {
@@ -312,8 +311,7 @@ void createFolder(std::string driveLetter) {
         _mkdir(labFinalTermPath.c_str());
       }
 
-
-      //Theory Section
+      // Theory Section
       std::cout << "How Many Theory Subjects have you got: ";
       std::cin >> subjectNumber;
       for (int i = 0; i < subjectNumber; i++) {
