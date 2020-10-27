@@ -12,6 +12,7 @@
 #include "../include/driveLetterTaker.hpp"
 #include "../include/rootDirCreator.hpp"
 #include "../include/abut.hpp"
+#include "../include/delete/delete.hpp"
 
 void homeDesign()
 {
@@ -29,7 +30,7 @@ void home()
 
     std::cout << "Your Options: " << std::endl;
 
-    std::vector<std::string> homeOptions = {"Create Mode", "About", "Directory Tree", "Exit"};
+    std::vector<std::string> homeOptions = {"Create Mode", "About", "Directory Tree", "Delete Mode", "Exit"};
 
     for (int i = 0; i < homeOptions.size(); i++)
     {
@@ -61,6 +62,9 @@ void home()
         dirTree();
         break;
     case 4:
+        deleteCreated();
+        break;
+    case 5:
         system("cls");
         system("color 04");
         std::cout<<"Exitin the program.......";
