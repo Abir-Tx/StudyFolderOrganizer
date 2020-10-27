@@ -100,7 +100,7 @@ void createFolder(std::string driveLetter) {
           selectedFoldersName_Lab.push_back(termFoldersName);
         }
       } else {
-        std::cout << "(Going with automatic creation....)";
+        std::cout <<"\t\t\t\t\t\t\t\t(Going with automatic creation....)";
         std::cout << std::endl;
         // Preloading the lessons folder
         selectedFoldersNumber_Lab = 1;
@@ -201,7 +201,7 @@ void createFolder(std::string driveLetter) {
           selectedFoldersName.push_back(termFoldersName);
         }
       } else {
-        std::cout << "(Going with automatic creation....)";
+        std::cout <<"\t\t\t\t\t\t\t\t(Going with automatic creation....)";
         std::cout << std::endl;
         // Preloading the lessons folder
         selectedFoldersNumber = 1;
