@@ -29,6 +29,7 @@ void dirTree()
     //Showing the available options
     optionHolder.push_back("Print it here");
     optionHolder.push_back("View in Notepad");
+    optionHolder.push_back("Go Back");
 
     for (int i = 0; i < optionHolder.size(); i++)
     {
@@ -70,6 +71,10 @@ void dirTree()
 
             system("start C:\\SFO\\Data\\Dir_Structure.txt");
         }
+    }
+    else if (choice == 3)
+    {
+        system("cls");
     }
 }
 #endif // DIRTREE_H
