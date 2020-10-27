@@ -22,6 +22,11 @@ void dirTree() {
   system("color 03");
   cout << setw(75) << setfill(' ') << "Directory Tree Viewer" << endl << endl;
 
+
+  //#23 issue
+  std::cout << "\t\t\t\t\tCurrently drive in use: " <<driveLetterHolder<<std::endl;
+  std::cout<<std::endl;
+  
   // Showing the available options
   optionHolder.push_back("Print it here");
   optionHolder.push_back("View in Notepad");
