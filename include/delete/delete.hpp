@@ -33,6 +33,7 @@ void deleteCreated() {
   if (isSure) {
     system("wscript ..\\include\\delete\\deleterLauncher.vbs");
   } else if (isSure == false) {
+    system("cls");
     std::cout << "Deletion cancelled. Nothing deleted !";
     std::cout << std::endl;
 
