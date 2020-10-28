@@ -48,6 +48,7 @@ void dirTree() {
       // Starting the dir tree
       system("cls");
       system("color 05");
+
       cout << "Printing the folders structure view inside the selected drive: "
            << endl;
       std::cout << std::endl;

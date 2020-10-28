@@ -359,7 +359,6 @@ void createFolder(std::string driveLetter) {
       goHome = true;
       break;
     }
-
     default: {
       std::cout << "Invalid Choice ! Exiting the program.........";
       std::cout << std::endl;
