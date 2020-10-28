@@ -25,6 +25,9 @@ std::string labSubjectsName;
 
 int gotoLabOrTheory;
 
+bool goHome = false;
+
+//Function
 void createFolder(std::string driveLetter) {
   std::cout << "Which year: ";
   std::cin >> year;
@@ -54,6 +57,7 @@ void createFolder(std::string driveLetter) {
     std::cout << "1. Lab" << std::endl;
     std::cout << "2. Theory" << std::endl;
     std::cout << "3. Lab & Theory (Auto Creation at once)" << std::endl;
+    std::cout << "4. Go to Home" << std::endl;
 
     int theoryOrLab = 0;
     std::cout << "Enter your choice: ";
@@ -350,6 +354,12 @@ void createFolder(std::string driveLetter) {
       system("cls");
       break;
     }
+    case 4:{
+      system("cls");
+      goHome = true;
+      break;
+    }
+
     default: {
       std::cout << "Invalid Choice ! Exiting the program.........";
       std::cout << std::endl;
@@ -357,23 +367,37 @@ void createFolder(std::string driveLetter) {
       break;
     }
     }
-    std::cout << "SUCCESSFULLY executed the requested tasks....." << std::endl;
-    std::cout << std::endl;
-    system("color 09");
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "Do you want to create more folders?";
-    std::cout << std::endl;
-    std::cout << "1. Yes, take me there";
-    std::cout << std::endl;
-    std::cout << "2. No, I want to exit";
-    std::cout << std::endl;
-    std::cout << "3. Take me to home screen";
-    std::cout << std::endl;
-    std::cout << std::endl;
-    std::cout << "Your choice: ";
-    std::cin >> gotoLabOrTheory;
-    system("cls");
+
+
+    if (goHome == true)
+    {
+      gotoLabOrTheory = 3;
+    }
+    else if(goHome == false)
+    {
+      std::cout << "SUCCESSFULLY executed the requested tasks....." << std::endl;
+      std::cout << std::endl;
+      system("color 09");
+      std::cout << std::endl;
+      std::cout << std::endl;
+      std::cout << "Do you want to create more folders?";
+      std::cout << std::endl;
+      std::cout << "1. Yes, take me there";
+      std::cout << std::endl;
+      std::cout << "2. No, I want to exit";
+      std::cout << std::endl;
+      std::cout << "3. Take me to home screen";
+      std::cout << std::endl;
+      std::cout << std::endl;
+      std::cout << "Your choice: ";
+      std::cin >> gotoLabOrTheory;
+      system("cls");
+    }
+    else
+    {
+      std::cout<<"Unknow Error Occured !";
+    }
+    
 
     if (gotoLabOrTheory == 2) {
       exit(0);
