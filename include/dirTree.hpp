@@ -68,10 +68,10 @@ void dirTree() {
       std::cout << std::endl;
       string treeDir =
           "tree /f /A " + driveLetterHolder +
-          ":\\\"University Study\" > C:\\SFO\\Data\\Dir_Structure.txt";
+          ":\\\"University Study\" > C:\\\"Program Files (x86)\"\\Abir-Tx\\SFO\\data\\Dir_Structure.txt";
       system(treeDir.c_str());
 
-      system("start C:\\SFO\\Data\\Dir_Structure.txt");
+      system("start C:\\\"Program Files (x86)\"\\Abir-Tx\\SFO\\data\\Dir_Structure.txt");
     }
   } else if (choice == 3) {
     system("cls");
