@@ -21,7 +21,7 @@ MAINICON ICON "SFO_v2.ico"
 // ------- version info -------------------------------------------------------
 
 VS_VERSION_INFO VERSIONINFO
-FILEVERSION             1,0,0,0
+FILEVERSION             1,0,1,0
 PRODUCTVERSION          1,0,0,0
 FILEFLAGSMASK           VS_FFI_FILEFLAGSMASK
 FILEFLAGS               VER_DBG
@@ -33,10 +33,10 @@ BEGIN
 	BEGIN
 		BLOCK "040904b0"
         BEGIN
-		VALUE "Comments",         "Create organized folder for study under a minuite"
+		VALUE "Comments",         "Create & Organize your study folders quickly & save time"
 		VALUE "CompanyName",      "Abir-Tx"
-		VALUE "FileDescription",  "SFO App"
-		VALUE "FileVersion",      "V1.0.1"
+		VALUE "FileDescription",  "Create & Organize your study folders quickly"
+		VALUE "FileVersion",      "V1.0.1.0"
 		VALUE "InternalName",     "Study Folder Organizer"
 		VALUE "LegalCopyright",   "(C)2020, Mushfiqur Rahman Abir"
 		VALUE "OriginalFilename", "StudyFolderOrganizer.exe"
