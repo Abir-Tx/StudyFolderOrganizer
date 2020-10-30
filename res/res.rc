@@ -4,7 +4,7 @@
 
 #include <winver.h>
 #include <ntdef.h>
-MAINICON ICON "icon.ico"
+MAINICON ICON "SFO_v2.ico"
 
 
 
