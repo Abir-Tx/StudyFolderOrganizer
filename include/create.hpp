@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 // User Defined header
 
@@ -28,6 +29,17 @@ int gotoLabOrTheory;
 bool goHome = false;
 
 // Function
+bool IsNumber(std::string s)            /* Function for checking string values if it has integer value or not */
+      {
+          for (int i = 0; i < s.length(); i++)
+              if (isdigit(s[i]) == false)
+                  return false;
+      
+          return true;
+      }
+
+
+// The main driver Func
 void createFolder(std::string driveLetter) {
   std::cout << "Which year: ";
   std::cin >> year;
@@ -61,17 +73,20 @@ void createFolder(std::string driveLetter) {
 
     int theoryOrLab = 0;
     std::cout << "Enter your choice: ";
-    try
-    {
-      std::cin >> theoryOrLab;
-    }
-    catch(std::runtime_error& e)
-    {
-        std::cerr<<"Error occured. Please eneter numbers only";
-        std::cout<<std::endl;
-        
-    }
-    
+
+      //Handling the error where if users input string values the program will not crash
+      std::string checkInput;      
+      std::cin >> checkInput;     //taking a temporary input
+      if (IsNumber(checkInput)==true)
+      {
+        std::stringstream to_int(checkInput);     
+        to_int >> theoryOrLab;        // converts to int and assigns the value to theoryOrLab
+      }
+      else
+      {
+        std::cerr<<"Do some stuffs here";
+        system("pause");
+      }
 
     switch (theoryOrLab) {
       case 1: {
