@@ -65,28 +65,33 @@ void createFolder(std::string driveLetter) {
   _mkdir(semesterPath.append("th Semester").c_str());
 
   do {
-    std::cout << "Lab or Theory: " << std::endl;
-    std::cout << "1. Lab" << std::endl;
-    std::cout << "2. Theory" << std::endl;
-    std::cout << "3. Lab & Theory (Auto Creation at once)" << std::endl;
-    std::cout << "4. Go to Home" << std::endl;
-
     int theoryOrLab = 0;
-    std::cout << "Enter your choice: ";
+    std::string checkInput;
+    do{
+      std::cout << "Lab or Theory: " << std::endl;
+      std::cout << "1. Lab" << std::endl;
+      std::cout << "2. Theory" << std::endl;
+      std::cout << "3. Lab & Theory (Auto Creation at once)" << std::endl;
+      std::cout << "4. Go to Home" << std::endl;
 
-      //Handling the error where if users input string values the program will not crash
-      std::string checkInput;      
-      std::cin >> checkInput;     //taking a temporary input
-      if (IsNumber(checkInput)==true)
-      {
-        std::stringstream to_int(checkInput);     
-        to_int >> theoryOrLab;        // converts to int and assigns the value to theoryOrLab
-      }
-      else
-      {
-        std::cerr<<"Do some stuffs here";
-        system("pause");
-      }
+      std::cout << "Enter your choice: ";
+
+        //Handling the error where if users input string values the program will not crash
+        std::cin >> checkInput;     //taking a temporary input
+        if (IsNumber(checkInput)==true)
+        {
+          std::stringstream to_int(checkInput);     
+          to_int >> theoryOrLab;        // converts to int and assigns the value to theoryOrLab
+        }
+        else
+        {
+          system("cls");
+          std::cerr<<"Invalid Input ! You must input integer values in range";
+          std::cout<<std::endl;
+        }
+    }
+    while (IsNumber(checkInput) == false);
+      
 
     switch (theoryOrLab) {
       case 1: {
