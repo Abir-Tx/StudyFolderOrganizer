@@ -23,7 +23,7 @@ A console app for creating folders inside a drive in a structured and organized 
 ***Alternatively you can click here to download the latest version***-
 > - [Latest Release & Source ](https://github.com/Abir-Tx/StudyFolderOrganizer/releases/latest)
 > - **Click below to direct download the Latest tool**
-> [![Download Now](https://github.com/Abir-Tx/StudyFolderOrganizer/blob/main/etc/SFO%20Readme%20Download%20Logo.png?raw=true)](https://github.com/Abir-Tx/StudyFolderOrganizer/releases/download/v1.0/StudyFolderOrgranizer_v1.0.exe)
+> [![Download Now](https://github.com/Abir-Tx/StudyFolderOrganizer/blob/main/etc/SFO%20Readme%20Download%20Logo.png?raw=true)](https://github.com/Abir-Tx/StudyFolderOrganizer/releases/download/v2.0.0/StudyFolderOrgranizer_v2.0.0.exe)
 
 
 
