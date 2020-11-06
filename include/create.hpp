@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <windows.h>
 
 // User Defined header
 
@@ -390,7 +391,13 @@ void createFolder(std::string driveLetter) {
         break;
       }
       default: {
-        std::cout << "Invalid Choice ! Exiting the program.........";
+        std::cout << "Invalid Choice ! Exiting the program";
+        for (int i = 0 ; i < 12 ; i++)
+        {
+          std::cout<<".";
+          Sleep(300);
+          system("cls");
+        }
         std::cout << std::endl;
         exit(0);
         break;
