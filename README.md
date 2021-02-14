@@ -12,11 +12,6 @@ A console app for creating folders inside a drive in a structured and organized 
 - x86 architecture cpu
 - The executing user should have rw (Read, Write) permission for the drive which he/she wants to create folder
 
-## Troubleshooting
-* > Some functionalities of the tool is not working/giving message like 'Directory Not Found'
-    
-    The app needs **Admisitative** permission to properly display all the functionality. If you get this kind of error try running the app as **Administrator**. In general, the app gets this permission when installing.
-
 ## Download Instructions
 * Go to the **Release** section of this repo and select the version of your choice.
 * Then just download the **StudyFolderOrgranizer_v1.0.exe** (The Version you like) on your Windows machine and run it.
@@ -29,7 +24,10 @@ A console app for creating folders inside a drive in a structured and organized 
 > [![Download Now](https://github.com/Abir-Tx/StudyFolderOrganizer/blob/main/etc/SFO%20Readme%20Download%20Logo.png?raw=true)](https://github.com/Abir-Tx/StudyFolderOrganizer/releases/download/v2.0.0/StudyFolderOrgranizer_v2.0.0.zip)
 
 
-
+## Troubleshooting
+* > Some functionalities of the tool is not working/giving message like 'Directory Not Found'
+    
+    The app needs **Admisitative** permission to properly display all the functionality. If you get this kind of error try running the app as **Administrator**. In general, the app gets this permission when installing.
 
 
 
