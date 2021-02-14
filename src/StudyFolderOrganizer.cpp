@@ -1,6 +1,7 @@
 /* A C++ source code file by Mushfiqur Rahman Abir. This terminal app is for windows only. I am making this for personal usage case. 
 Anyone can modify this codes to meet their needs if they like the idea of the software */
 
+#include "rang.hpp"
 #include <iostream>
 #include "../include/home.hpp"
 
@@ -11,7 +12,7 @@ int main()
     {
         home();
         std::cout<<std::endl;
-        std::cout << "Press 1 to go to homepage again & others to Exit: ";
+        std::cout <<rang::fg::blue<<"Press 1 to go to homepage again & others to Exit: "<<rang::fg::reset;
         std::cin >> choice;
     } while (choice == 1);
     if(choice != 1)
