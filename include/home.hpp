@@ -13,13 +13,14 @@
 #include "../include/delete/delete.hpp"
 #include "../include/driveLetterTaker.hpp"
 #include "../include/rootDirCreator.hpp"
+#include "alib.hpp"
 
 void homeDesign() {
   system("color 04");
   system("title Study Folder Organizer");
   std::string title = "Study Folder Organizer";
-  std::cout << std::setw(80) << std::setfill(' ') << title << std::endl
-            << std::endl;
+
+  alib::straightLineDecor("Study Folder Organizer", 2);
 }
 
 void home() {
