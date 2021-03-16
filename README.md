@@ -7,6 +7,10 @@
 ## About The Tool 
 A console app for creating folders inside a drive in a structured and organized way for study purpose. It creates all the folders based on the user input at once so this saves the time of creating folders and managing them manually as a student. **Study Folder Organizer** is a command line tool to organize the life of a student. This tool helps to make a well structured directory of folders using year>semester>terms pattern for each subject. Creating these folders and managing the files after the end of every semester takes a lot of time. That's why I created this tool.
 
+## New GUI Version
+A new Graphical version of this project & tool is currently being developed and is available for download.
+- Visit [this](https://github.com/Abir-Tx/StudyFolderOrganizer-GUI) link to get the tool
+
 ## Requirements
 - The tool works only on Windows platforms (I have only tested it with **Windows 10** so far)
 - x86 architecture cpu
