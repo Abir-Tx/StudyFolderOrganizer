@@ -7,9 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  Linux:
+    name: build-windows
+    runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v2
