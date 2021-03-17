@@ -2,22 +2,19 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  Linux:
+  Windows:
     name: build-windows
     runs-on: windows-2019
 
     steps:
-    - uses: actions/checkout@v2
-#     - name: configure
-#       run: ./configure
-    - name: make
-      run: make
-#     - name: make check
-#       run: make check
-#     - name: make distcheck
-#       run: make distcheck
+      - uses: actions/checkout@v2
+
+      - name: compile
+        run: make build
+      - name: run
+        run: make run
