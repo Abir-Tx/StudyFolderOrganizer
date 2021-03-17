@@ -14,8 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: install-make
-        run: choco install make
       - name: compile
         run: make build
       - name: run
