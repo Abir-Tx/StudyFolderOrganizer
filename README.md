@@ -1,6 +1,6 @@
 # StudyFolderOrganizer
 
-[![Download Study Folder Organizer](https://img.shields.io/sourceforge/dm/studyfolderorganizer.svg)](https://sourceforge.net/projects/studyfolderorganizer/files/latest/download)
+[![Download Study Folder Organizer](https://img.shields.io/sourceforge/dm/studyfolderorganizer.svg)](https://sourceforge.net/projects/studyfolderorganizer/files/latest/download) [![C/C++ CI](https://github.com/Abir-Tx/StudyFolderOrganizer/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Abir-Tx/StudyFolderOrganizer/actions/workflows/c-cpp.yml)
 
 ![SFO Icon](https://raw.githubusercontent.com/Abir-Tx/StudyFolderOrganizer/main/res/SFO_v2.ico)
 
