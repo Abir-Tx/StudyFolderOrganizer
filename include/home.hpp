@@ -67,7 +67,7 @@ void home() {
     case 5:
         system("cls");
         system("color 04");
-        std::cout << "Exitin the program.......";
+        std::cout << "Exiting the program.......";
         exit(0);
         break;
     default:
