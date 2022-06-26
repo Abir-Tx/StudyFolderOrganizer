@@ -1,7 +1,11 @@
 /* A C++ source code file by Mushfiqur Rahman Abir. This terminal app is for
 windows only. I am making this for personal usage case.
 Anyone can modify this codes to meet their needs if they like the idea of the
-software */
+software
+
+Library Informations:
+https://github.com/Abir-Tx/StudyFolderOrganizer/blob/main/docs/libs.md
+*/
 
 #include "alib.hpp"
 #include <iostream>
