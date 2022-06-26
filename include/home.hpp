@@ -27,18 +27,23 @@ void home() {
     system("cls");
     homeDesign();
 
-    std::cout << "Your Options: " << std::endl;
+    std::cout << rang::style::bold << "Your Options: " << rang::style::reset
+              << std::endl
+              << std::endl;
 
     std::vector<std::string> homeOptions = {
         "Create Mode", "About", "Directory Tree", "Delete Mode", "Exit"};
 
+    std::cout << rang::style::italic;
     for (int i = 0; i < homeOptions.size(); i++) {
         std::cout << (i + 1) << ". " << homeOptions[i] << std::endl;
     }
-    std::cout << "Your choice: ";
+    std::cout << rang::style::reset;
+    std::cout << std::endl;
+    std::cout << rang::fg::blue << "Your choice: ";
     int choice;
     std::cin >> choice;
-    std::cout << std::endl;
+    std::cout << rang::fg::reset << std::endl;
 
     switch (choice) {
     case 1: {
