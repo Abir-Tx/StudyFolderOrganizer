@@ -43,7 +43,7 @@ If `make` program is installed & added to your **Windows Path** then compiling i
 ## Troubleshooting
 
 - > Some functionalities of the tool is not working/giving message like 'Directory Not Found'
-  The app needs **Admisitative** permission to properly display all the functionality. If you get this kind of error try running the app as **Administrator**. In general, the app gets this permission when installing.
+  > The app needs **Admisitative** permission to properly display all the functionality. If you get this kind of error try running the app as **Administrator**. In general, the app gets this permission when installing.
 
 > If you find any bug or if you have any suggestions please create a new issue [here](https://github.com/Abir-Tx/StudyFolderOrganizer/issues/new/choose) or mail me at this >
 > <abirtx@yandex.com>.
