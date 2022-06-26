@@ -1,0 +1,12 @@
+# Clang format file for SFO repo
+
+---
+Language:        Cpp
+IndentWidth: 4
+
+
+AlignAfterOpenBracket: true
+AlignConsecutiveAssignments: true
+AlignEscapedNewlinesLeft: true
+AlignOperands: true
+AlignTrailingComments: true
