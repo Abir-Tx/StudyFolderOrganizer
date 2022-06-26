@@ -3,16 +3,20 @@ windows only. I am making this for personal usage case.
 Anyone can modify this codes to meet their needs if they like the idea of the
 software */
 
-#include "rang.hpp"
+#include "alib.hpp"
 #include <iostream>
+
+// user defined
 #include "../include/home.hpp"
 
 int main() {
     int choice;
     do {
         home();
-        std::cout<<std::endl;
-        std::cout <<rang::fg::blue<<"Press 1 to go to homepage again & others to Exit: "<<rang::fg::reset;
+        std::cout << std::endl;
+        std::cout << rang::fg::blue
+                  << "Press 1 to go to homepage again & others to Exit: "
+                  << rang::fg::reset;
         std::cin >> choice;
     } while (choice == 1);
     if (choice != 1) {
