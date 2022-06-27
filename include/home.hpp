@@ -32,8 +32,7 @@ void home() {
               << std::endl;
 
     std::vector<std::string> homeOptions = {
-        "Create Mode", "About", "Directory Tree", "Delete Mode", "Exit"
-    };
+        "Create Mode", "About", "Directory Tree", "Delete Mode", "Exit"};
 
     std::cout << rang::style::italic;
     for (int i = 0; i < homeOptions.size(); i++) {
@@ -55,8 +54,7 @@ void home() {
         driveTaker();
         rootDirCreator();
         createFolder(driveLetter);
-    }
-    break;
+    } break;
     case 2:
         about();
         break;

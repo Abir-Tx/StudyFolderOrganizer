@@ -37,7 +37,7 @@ Developer Profile   https://www.github.com/Abir-Tx
 
 #if defined(_WIN32_WINNT) && (_WIN32_WINNT < 0x0600)
 #error \
-"Please include rang.hpp before any windows system headers or set _WIN32_WINNT at least to _WIN32_WINNT_VISTA"
+    "Please include rang.hpp before any windows system headers or set _WIN32_WINNT at least to _WIN32_WINNT_VISTA"
 #elif !defined(_WIN32_WINNT)
 #define _WIN32_WINNT _WIN32_WINNT_VISTA
 #endif
@@ -69,74 +69,74 @@ namespace rang {
  * Note that on Windows terminals bold style is same as fgB color.
  */
 enum class style {
-    reset = 0,
-    bold = 1,
-    dim = 2,
-    italic = 3,
+    reset     = 0,
+    bold      = 1,
+    dim       = 2,
+    italic    = 3,
     underline = 4,
-    blink = 5,
-    rblink = 6,
-    reversed = 7,
-    conceal = 8,
-    crossed = 9
+    blink     = 5,
+    rblink    = 6,
+    reversed  = 7,
+    conceal   = 8,
+    crossed   = 9
 };
 
 enum class fg {
-    black = 30,
-    red = 31,
-    green = 32,
-    yellow = 33,
-    blue = 34,
+    black   = 30,
+    red     = 31,
+    green   = 32,
+    yellow  = 33,
+    blue    = 34,
     magenta = 35,
-    cyan = 36,
-    gray = 37,
-    reset = 39
+    cyan    = 36,
+    gray    = 37,
+    reset   = 39
 };
 
 enum class bg {
-    black = 40,
-    red = 41,
-    green = 42,
-    yellow = 43,
-    blue = 44,
+    black   = 40,
+    red     = 41,
+    green   = 42,
+    yellow  = 43,
+    blue    = 44,
     magenta = 45,
-    cyan = 46,
-    gray = 47,
-    reset = 49
+    cyan    = 46,
+    gray    = 47,
+    reset   = 49
 };
 
 enum class fgB {
-    black = 90,
-    red = 91,
-    green = 92,
-    yellow = 93,
-    blue = 94,
+    black   = 90,
+    red     = 91,
+    green   = 92,
+    yellow  = 93,
+    blue    = 94,
     magenta = 95,
-    cyan = 96,
-    gray = 97
+    cyan    = 96,
+    gray    = 97
 };
 
 enum class bgB {
-    black = 100,
-    red = 101,
-    green = 102,
-    yellow = 103,
-    blue = 104,
+    black   = 100,
+    red     = 101,
+    green   = 102,
+    yellow  = 103,
+    blue    = 104,
     magenta = 105,
-    cyan = 106,
-    gray = 107
+    cyan    = 106,
+    gray    = 107
 };
 
-enum class control {  // Behaviour of rang function calls
-    Off = 0,            // toggle off rang style/color calls
-    Auto = 1,           // (Default) autodect terminal and colorize if needed
-    Force = 2           // force ansi color output to non terminal streams
+enum class control { // Behaviour of rang function calls
+    Off   = 0,       // toggle off rang style/color calls
+    Auto  = 1,       // (Default) autodect terminal and colorize if needed
+    Force = 2        // force ansi color output to non terminal streams
 };
 // Use rang::setControlMode to set rang control mode
 
-enum class winTerm {  // Windows Terminal Mode
-    Auto = 0,   // (Default) automatically detects wheter Ansi or Native API
-    Ansi = 1,   // Force use Ansi API
+enum class winTerm { // Windows Terminal Mode
+    Auto   = 0, // (Default) automatically detects wheter Ansi or Native API
+    Ansi   = 1, // Force use Ansi API
     Native = 2  // Force use Native API
 };
 // Use rang::setWinTermMode to explicitly set terminal API for Windows
@@ -158,20 +158,19 @@ inline bool supportsColor() noexcept {
 #if defined(OS_LINUX) || defined(OS_MAC)
 
     static const bool result = [] {
-        const char *Terms[] = {"ansi",    "color",  "console", "cygwin", "gnome",
-            "konsole", "kterm",  "linux",   "msys",   "putty",
-            "rxvt",    "screen", "vt100",   "xterm"
-        };
+        const char *Terms[] = {"ansi",  "color",   "console", "cygwin",
+                               "gnome", "konsole", "kterm",   "linux",
+                               "msys",  "putty",   "rxvt",    "screen",
+                               "vt100", "xterm"};
 
         const char *env_p = std::getenv("TERM");
         if (env_p == nullptr) {
             return false;
         }
-        return std::any_of(
-                   std::begin(Terms), std::end(Terms),
-        [&](const char *term) {
-            return std::strstr(env_p, term) != nullptr;
-        });
+        return std::any_of(std::begin(Terms), std::end(Terms),
+                           [&](const char *term) {
+                               return std::strstr(env_p, term) != nullptr;
+                           });
     }();
 
 #elif defined(OS_WIN)
@@ -210,8 +209,8 @@ inline bool isMsysPty(int fd) noexcept {
         WCHAR FileName[MAX_PATH];
     };
 
-    auto pNameInfo = std::unique_ptr<MY_FILE_NAME_INFO>(new (std::nothrow)
-                     MY_FILE_NAME_INFO());
+    auto pNameInfo = std::unique_ptr<MY_FILE_NAME_INFO>(
+        new (std::nothrow) MY_FILE_NAME_INFO());
     if (!pNameInfo) {
         return false;
     }
@@ -225,8 +224,8 @@ inline bool isMsysPty(int fd) noexcept {
     std::wstring name(pNameInfo->FileName,
                       pNameInfo->FileNameLength / sizeof(WCHAR));
     if ((name.find(L"msys-") == std::wstring::npos &&
-            name.find(L"cygwin-") == std::wstring::npos) ||
-            name.find(L"-pty") == std::wstring::npos) {
+         name.find(L"cygwin-") == std::wstring::npos) ||
+        name.find(L"-pty") == std::wstring::npos) {
         return false;
     }
 
@@ -263,31 +262,31 @@ inline bool isTerminal(const std::streambuf *osbuf) noexcept {
 
 template <typename T>
 using enableStd = typename std::enable_if<
-                  std::is_same<T, rang::style>::value || std::is_same<T, rang::fg>::value ||
-                  std::is_same<T, rang::bg>::value || std::is_same<T, rang::fgB>::value ||
-                  std::is_same<T, rang::bgB>::value,
-                  std::ostream &>::type;
+    std::is_same<T, rang::style>::value || std::is_same<T, rang::fg>::value ||
+        std::is_same<T, rang::bg>::value || std::is_same<T, rang::fgB>::value ||
+        std::is_same<T, rang::bgB>::value,
+    std::ostream &>::type;
 
 #ifdef OS_WIN
 
-struct SGR {        // Select Graphic Rendition parameters for Windows console
-    BYTE fgColor;     // foreground color (0-15) lower 3 rgb bits + intense bit
-    BYTE bgColor;     // background color (0-15) lower 3 rgb bits + intense bit
-    BYTE bold;        // emulated as FOREGROUND_INTENSITY bit
-    BYTE underline;   // emulated as BACKGROUND_INTENSITY bit
-    BOOLEAN inverse;  // swap foreground/bold & background/underline
-    BOOLEAN conceal;  // set foreground/bold to background/underline
+struct SGR {         // Select Graphic Rendition parameters for Windows console
+    BYTE fgColor;    // foreground color (0-15) lower 3 rgb bits + intense bit
+    BYTE bgColor;    // background color (0-15) lower 3 rgb bits + intense bit
+    BYTE bold;       // emulated as FOREGROUND_INTENSITY bit
+    BYTE underline;  // emulated as BACKGROUND_INTENSITY bit
+    BOOLEAN inverse; // swap foreground/bold & background/underline
+    BOOLEAN conceal; // set foreground/bold to background/underline
 };
 
-enum class AttrColor : BYTE {  // Color attributes for console screen buffer
-    black = 0,
-    red = 4,
-    green = 2,
-    yellow = 6,
-    blue = 1,
+enum class AttrColor : BYTE { // Color attributes for console screen buffer
+    black   = 0,
+    red     = 4,
+    green   = 2,
+    yellow  = 6,
+    blue    = 1,
     magenta = 5,
-    cyan = 3,
-    gray = 7
+    cyan    = 3,
+    gray    = 7
 };
 
 inline HANDLE getConsoleHandle(const std::streambuf *osbuf) noexcept {
@@ -337,11 +336,12 @@ inline const SGR &defaultState() noexcept {
     static const SGR defaultSgr = []() -> SGR {
         CONSOLE_SCREEN_BUFFER_INFO info;
         WORD attrib = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE;
-        if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info) ||
-                GetConsoleScreenBufferInfo(GetStdHandle(STD_ERROR_HANDLE), &info)) {
+        if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE),
+                                       &info) ||
+            GetConsoleScreenBufferInfo(GetStdHandle(STD_ERROR_HANDLE), &info)) {
             attrib = info.wAttributes;
         }
-        SGR sgr = {0, 0, 0, 0, FALSE, FALSE};
+        SGR sgr     = {0, 0, 0, 0, FALSE, FALSE};
         sgr.fgColor = attrib & 0x0F;
         sgr.bgColor = (attrib & 0xF0) >> 4;
         return sgr;
@@ -350,10 +350,10 @@ inline const SGR &defaultState() noexcept {
 }
 
 inline BYTE ansi2attr(BYTE rgb) noexcept {
-    static const AttrColor rev[8] = {
-        AttrColor::black, AttrColor::red,     AttrColor::green, AttrColor::yellow,
-        AttrColor::blue,  AttrColor::magenta, AttrColor::cyan,  AttrColor::gray
-    };
+    static const AttrColor rev[8] = {AttrColor::black, AttrColor::red,
+                                     AttrColor::green, AttrColor::yellow,
+                                     AttrColor::blue,  AttrColor::magenta,
+                                     AttrColor::cyan,  AttrColor::gray};
     return static_cast<BYTE>(rev[rgb]);
 }
 
@@ -379,7 +379,8 @@ inline void setWinSGR(rang::bgB col, SGR &state) noexcept {
 }
 
 inline void setWinSGR(rang::fgB col, SGR &state) noexcept {
-    state.fgColor = FOREGROUND_INTENSITY | ansi2attr(static_cast<BYTE>(col) - 90);
+    state.fgColor =
+        FOREGROUND_INTENSITY | ansi2attr(static_cast<BYTE>(col) - 90);
 }
 
 inline void setWinSGR(rang::style style, SGR &state) noexcept {
@@ -415,7 +416,8 @@ inline WORD SGR2Attr(const SGR &state) noexcept {
     if (state.conceal) {
         if (state.inverse) {
             attrib = (state.fgColor << 4) | state.fgColor;
-            if (state.bold) attrib |= FOREGROUND_INTENSITY | BACKGROUND_INTENSITY;
+            if (state.bold)
+                attrib |= FOREGROUND_INTENSITY | BACKGROUND_INTENSITY;
         } else {
             attrib = (state.bgColor << 4) | state.bgColor;
             if (state.underline)
@@ -423,8 +425,10 @@ inline WORD SGR2Attr(const SGR &state) noexcept {
         }
     } else if (state.inverse) {
         attrib = (state.fgColor << 4) | state.bgColor;
-        if (state.bold) attrib |= BACKGROUND_INTENSITY;
-        if (state.underline) attrib |= FOREGROUND_INTENSITY;
+        if (state.bold)
+            attrib |= BACKGROUND_INTENSITY;
+        if (state.underline)
+            attrib |= FOREGROUND_INTENSITY;
     } else {
         attrib =
             state.fgColor | (state.bgColor << 4) | state.bold | state.underline;
@@ -469,18 +473,18 @@ inline enableStd<T> setColor(std::ostream &os, T const value) {
     return os << "\033[" << static_cast<int>(value) << "m";
 }
 #endif
-}  // namespace rang_implementation
+} // namespace rang_implementation
 
 template <typename T>
 inline rang_implementation::enableStd<T> operator<<(std::ostream &os,
-        const T value) {
+                                                    const T value) {
     const control option = rang_implementation::controlMode();
     switch (option) {
     case control::Auto:
         return rang_implementation::supportsColor() &&
-               rang_implementation::isTerminal(os.rdbuf())
-               ? rang_implementation::setColor(os, value)
-               : os;
+                       rang_implementation::isTerminal(os.rdbuf())
+                   ? rang_implementation::setColor(os, value)
+                   : os;
     case control::Force:
         return rang_implementation::setColor(os, value);
     default:
@@ -496,16 +500,16 @@ inline void setControlMode(const control value) noexcept {
     rang_implementation::controlMode() = value;
 }
 
-}  // namespace rang
+} // namespace rang
 
 #undef OS_LINUX
 #undef OS_WIN
 #undef OS_MAC
 
-/* ..................................................................................____________________________________________________.................................................................................... */
+/* ..................................................................................____________________________________________________....................................................................................
+ */
 
 // ALIB Header files codes
-
 
 // Defining the different platforms
 #if defined(__unix__) || defined(__unix) || defined(__linux__)
@@ -533,7 +537,8 @@ inline void setControlMode(const control value) noexcept {
 #include <iostream>
 #include <vector>
 
-// #include "rang.hpp" /* A third party library for console text styling and coloring */
+// #include "rang.hpp" /* A third party library for console text styling and
+// coloring */
 
 // Functions
 namespace alib {
@@ -673,8 +678,9 @@ void decorateMe(std::string textToDecor, unsigned short int lineBreaksNumber,
 
         // Getting the terminal center value & starting point of the decorations
         unsigned int termCenter = consoleWidth() / 2;
-        int startingPoint = termCenter - (charSize / 2);
-        int textToDecor_StartingPoint = startingPoint + ((charSize * 2) - charSize);
+        int startingPoint       = termCenter - (charSize / 2);
+        int textToDecor_StartingPoint =
+            startingPoint + ((charSize * 2) - charSize);
 
         std::cout << std::endl;
         std::cout << fg::red;
@@ -686,8 +692,9 @@ void decorateMe(std::string textToDecor, unsigned short int lineBreaksNumber,
         for (int i = 1; i <= lineBreaksNumber; i++) {
             std::cout << std::endl;
         }
-        std::cout << fg::blue << style::bold << std::setw(textToDecor_StartingPoint)
-                  << std::setfill(' ') << textToDecor << style::reset << fg::reset;
+        std::cout << fg::blue << style::bold
+                  << std::setw(textToDecor_StartingPoint) << std::setfill(' ')
+                  << textToDecor << style::reset << fg::reset;
 
         for (int i = 1; i <= lineBreaksNumber; i++) {
             std::cout << std::endl;
@@ -715,7 +722,8 @@ void countdown(unsigned int starting_number) {
 void countdown(unsigned int starting_number, bool transition) {
     if (transition) {
         for (unsigned int i = starting_number; i <= starting_number; i--) {
-            std::cout << rang::style::bold << i << rang::style::reset << std::endl;
+            std::cout << rang::style::bold << i << rang::style::reset
+                      << std::endl;
             sleep(1);
         }
     } else {
@@ -726,7 +734,8 @@ void countdown(unsigned int starting_number, unsigned int ending_number,
                bool transition) {
     if (transition) {
         for (unsigned int i = starting_number; i >= ending_number; i--) {
-            std::cout << rang::style::bold << i << rang::style::reset << std::endl;
+            std::cout << rang::style::bold << i << rang::style::reset
+                      << std::endl;
             sleep(1);
         }
     } else {
@@ -738,24 +747,28 @@ void countdown(unsigned int starting_number, unsigned int ending_number,
                bool transition, bool isInline) {
     if (transition) {
         if (isInline) {
-            /* For an unknown reason the transition/sleep is not working as expected.
-            Instead of showing one by one it is showing all the numbers at once */
+            /* For an unknown reason the transition/sleep is not working as
+            expected. Instead of showing one by one it is showing all the
+            numbers at once */
 
             for (unsigned int i = starting_number; i >= ending_number; i--) {
-                std::cout << rang::style::bold << i << rang::style::reset << " ";
+                std::cout << rang::style::bold << i << rang::style::reset
+                          << " ";
                 // std::cout << " ";
                 sleep(1);
             }
         } else {
             for (unsigned int i = starting_number; i >= ending_number; i--) {
-                std::cout << rang::style::bold << i << rang::style::reset << std::endl;
+                std::cout << rang::style::bold << i << rang::style::reset
+                          << std::endl;
                 sleep(1);
             }
         }
     } else {
         if (isInline) {
             for (unsigned int i = starting_number; i >= ending_number; i--) {
-                std::cout << rang::style::bold << i << rang::style::reset << " ";
+                std::cout << rang::style::bold << i << rang::style::reset
+                          << " ";
             }
         } else {
             countdown(starting_number);
@@ -777,8 +790,9 @@ void showLoadingScreen(unsigned short int count = 3) {
 void showLoadingScreen(std::string loadingText, unsigned short int count = 3,
                        bool enableBothSide = false) {
     if (!enableBothSide) {
-RightSideLoading:
-        std::cout << rang::style::bold << loadingText << " " << rang::style::reset;
+    RightSideLoading:
+        std::cout << rang::style::bold << loadingText << " "
+                  << rang::style::reset;
         showLoadingScreen(count);
     } else {
         showLoadingScreen(count); /* For left side loading */
@@ -789,7 +803,7 @@ RightSideLoading:
 // Prints a full screen horizontal line dynamically on runtime depending on the
 // terminal size with optional colors
 void horizontalLine(unsigned short int count = 1,
-                    std::string barColor = "white") {
+                    std::string barColor     = "white") {
     using namespace rang;
 
 // Macro for setting the bar color
@@ -809,7 +823,7 @@ void horizontalLine(unsigned short int count = 1,
         runBar = false;
         std::cerr << barColor
                   << " Bar Color is not supported. Supported "
-                  "colors are -> white, red, blue, green";
+                     "colors are -> white, red, blue, green";
     }
 
     if (runBar) {
@@ -821,10 +835,11 @@ void horizontalLine(unsigned short int count = 1,
     } else {
         std::cerr << barColor
                   << " Bar Color is not supported. Supported "
-                  "colors are -> white, red, blue, green";
+                     "colors are -> white, red, blue, green";
     }
 
-    // Reset the standart output stream to avoid showing colors for other streams
+    // Reset the standart output stream to avoid showing colors for other
+    // streams
     SETBARCOLOR reset;
 
 #undef SETBARCOLOR
@@ -837,11 +852,11 @@ std::endl;
   }
 } */
 
-}  // end of namespace alib
+} // end of namespace alib
 
 // Undefining different platforms
 #undef LINUX
 #undef WINDOWS
 #undef MAC
 
-#endif  // ALIB_DOT_HPP
+#endif // ALIB_DOT_HPP

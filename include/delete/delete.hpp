@@ -11,7 +11,7 @@ void deleteCreated() {
     std::cout << std::endl;
 
     std::cout << "Are you sure you want to delete the whole directory "
-              "including files?\n";
+                 "including files?\n";
     std::cout << std::endl;
     bool isSure;
     std::string options[2] = {"Yes", "No"};
@@ -38,8 +38,8 @@ void deleteCreated() {
         std::cout << "Directory Deletion Started . . . . . . . . . . \n\n";
         system("wscript ..\\include\\delete\\deleterLauncher.vbs");
         std::cout
-                << "########################-- Task Completed ! Successfully "
-                "Deleted all the folders recursively --########################";
+            << "########################-- Task Completed ! Successfully "
+               "Deleted all the folders recursively --########################";
         std::cout << std::endl;
         std::cout << std::endl;
     } else if (isSure == false) {

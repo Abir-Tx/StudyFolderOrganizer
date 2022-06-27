@@ -9,11 +9,11 @@ void about() {
     alib::decorateMe("About SFO", 1, "-", true);
 
     std::cout << "SFO stands for Study Folder Organizer. Developed & managed "
-              "by Mushfiqur Rahman Abir. "
+                 "by Mushfiqur Rahman Abir. "
               << "This small tool allows to manage a student's university's "
-              "digital files in a organized way."
+                 "digital files in a organized way."
               << "This app creates a structured directory to specified drive "
-              "for managing and keeping files";
+                 "for managing and keeping files";
     std::cout << std::endl;
     std::cout << std::endl;
     std::cout << std::endl;
