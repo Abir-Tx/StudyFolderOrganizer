@@ -7,15 +7,20 @@ Library Informations:
 https://github.com/Abir-Tx/StudyFolderOrganizer/blob/main/docs/libs.md
 */
 
-#include "../include/home.hpp"
+#include "alib.hpp"
 #include <iostream>
+
+// user defined
+#include "../include/home.hpp"
 
 int main() {
     int choice;
     do {
         home();
         std::cout << std::endl;
-        std::cout << "Press 1 to go to homepage again & others to Exit: ";
+        std::cout << rang::fg::blue
+                  << "Press 1 to go to homepage again & others to Exit: "
+                  << rang::fg::reset;
         std::cin >> choice;
     } while (choice == 1);
     if (choice != 1) {

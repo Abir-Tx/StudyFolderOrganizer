@@ -3,11 +3,11 @@ CC := g++
 SRCDIR := src
 BUILDDIR := bin
 CFLAG := -v
-INC := -I include/ -I include/delete -I lib
+INC := -I include/ -I include/delete -I lib -I lib/rang -I lib/alib
 APPNAME := StudyFolderOrganizer
 
 .PHONY: all
-all: build run 
+all: build run
 
 .PHONY: build
 build:

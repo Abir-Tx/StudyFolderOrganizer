@@ -1,10 +1,10 @@
-#if !defined(CREATE_H)
-#define CREATE_H
+#if !defined(CREATE_HPP)
+#define CREATE_HPP
 #include <direct.h>
 #include <iomanip>
 #include <iostream>
-#include <vector>
 #include <sstream>
+#include <vector>
 #include <windows.h>
 
 // User Defined header
@@ -47,6 +47,8 @@ void createFolder(std::string driveLetter) {
     /* if (year<1 || year > 4 )     //Can't do this as year is string value
     {
         std::cout<<"Year cannot be more than 4 or less than 1"
+
+        TODO: #55 Create this check
     } */
 
     std::cout << "Enter Semester Number: ";
@@ -83,7 +85,7 @@ void createFolder(std::string driveLetter) {
             if (IsNumber(checkInput) == true) {
                 std::stringstream to_int(checkInput);
                 to_int >> theoryOrLab; // converts to int and assigns the value
-                                       // to theoryOrLab
+                // to theoryOrLab
             } else {
                 system("cls");
                 std::cerr
@@ -444,4 +446,4 @@ void createFolder(std::string driveLetter) {
         }
     } while (gotoLabOrTheory == 1);
 }
-#endif // CREATE_H
+#endif // CREATE_HPP
