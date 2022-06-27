@@ -47,6 +47,8 @@ void createFolder(std::string driveLetter) {
     /* if (year<1 || year > 4 )     //Can't do this as year is string value
     {
         std::cout<<"Year cannot be more than 4 or less than 1"
+
+        TODO: #55 Create this check
     } */
 
     std::cout << "Enter Semester Number: ";
