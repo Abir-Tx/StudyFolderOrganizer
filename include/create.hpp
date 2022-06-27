@@ -85,11 +85,11 @@ void createFolder(std::string driveLetter) {
             if (IsNumber(checkInput) == true) {
                 std::stringstream to_int(checkInput);
                 to_int >> theoryOrLab; // converts to int and assigns the value
-                                       // to theoryOrLab
+                // to theoryOrLab
             } else {
                 system("cls");
                 std::cerr
-                    << "Invalid Input ! You must input integer values in range";
+                        << "Invalid Input ! You must input integer values in range";
                 std::cout << std::endl;
             }
         } while (IsNumber(checkInput) == false);
@@ -105,7 +105,7 @@ void createFolder(std::string driveLetter) {
             int selectedFoldersNumber_Lab;
 
             std::cout << "Do you want to manually specify folders under terms "
-                         "sections?"
+                      "sections?"
                       << std::endl;
             std::vector<std::string> yesNoOption;
             yesNoOption.push_back("Yes");
@@ -129,8 +129,8 @@ void createFolder(std::string driveLetter) {
 
             if (isManualCreationChoice_Lab == true) {
                 std::cout
-                    << "How many folders you wanna create inside the Term "
-                       "Folders (Lessons Excluded): ";
+                        << "How many folders you wanna create inside the Term "
+                        "Folders (Lessons Excluded): ";
                 std::cin >> selectedFoldersNumber_Lab;
                 for (int i = 0; i < selectedFoldersNumber_Lab; i++) {
                     std::cout << "Enter name of folder no " << (i + 1) << ": ";
@@ -139,7 +139,7 @@ void createFolder(std::string driveLetter) {
                 }
             } else {
                 std::cout
-                    << "\t\t\t\t\t\t\t\t(Going with automatic creation....)";
+                        << "\t\t\t\t\t\t\t\t(Going with automatic creation....)";
                 std::cout << std::endl;
                 // Preloading the lessons folder
                 selectedFoldersNumber_Lab = 1;
@@ -210,7 +210,7 @@ void createFolder(std::string driveLetter) {
             std::cout << "How Many Theory Subjects have you got: ";
             std::cin >> subjectNumber;
             std::cout << "Do you want to manually specify folders under terms "
-                         "sections?"
+                      "sections?"
                       << std::endl;
             std::vector<std::string> yesNoOption;
             yesNoOption.push_back("Yes");
@@ -234,8 +234,8 @@ void createFolder(std::string driveLetter) {
 
             if (isManualCreationChoice == true) {
                 std::cout
-                    << "How many folders you wanna create inside the Term "
-                       "Folders (Lessons Excluded): ";
+                        << "How many folders you wanna create inside the Term "
+                        "Folders (Lessons Excluded): ";
                 std::cin >> selectedFoldersNumber;
                 for (int i = 0; i < selectedFoldersNumber; i++) {
                     std::cout << "Enter name of folder no " << (i + 1) << ": ";
@@ -244,7 +244,7 @@ void createFolder(std::string driveLetter) {
                 }
             } else {
                 std::cout
-                    << "\t\t\t\t\t\t\t\t(Going with automatic creation....)";
+                        << "\t\t\t\t\t\t\t\t(Going with automatic creation....)";
                 std::cout << std::endl;
                 // Preloading the lessons folder
                 selectedFoldersNumber = 1;

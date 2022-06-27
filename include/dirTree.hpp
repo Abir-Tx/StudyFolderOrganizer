@@ -44,8 +44,8 @@ void dirTree() {
         if (driveLetterHolder.empty() == true) {
             system("cls");
             cout << "You have not created ant folders yet. Please go to the "
-                    "create "
-                    "mode to create folders first!"
+                 "create "
+                 "mode to create folders first!"
                  << endl;
         } else {
             // Starting the dir tree
@@ -53,7 +53,7 @@ void dirTree() {
             system("color 05");
 
             cout << "Printing the folders structure view inside the selected "
-                    "drive: "
+                 "drive: "
                  << endl;
             std::cout << std::endl;
             string treeDir =
@@ -64,8 +64,8 @@ void dirTree() {
         if (driveLetterHolder.empty() == true) {
             system("cls");
             cout << "You have not created ant folders yet. Please go to the "
-                    "create "
-                    "mode to create folders first!"
+                 "create "
+                 "mode to create folders first!"
                  << endl;
         } else {
             // Starting the dir tree to save in txt file
