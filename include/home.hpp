@@ -71,7 +71,7 @@ void home() {
         exit(0);
         break;
     default:
-        std::cout << "Invalid";
+        std::cout << "Invalid option selected";
         break;
     }
 }
