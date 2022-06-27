@@ -85,7 +85,7 @@ void createFolder(std::string driveLetter) {
             if (IsNumber(checkInput) == true) {
                 std::stringstream to_int(checkInput);
                 to_int >> theoryOrLab; // converts to int and assigns the value
-                                       // to theoryOrLab
+                // to theoryOrLab
             } else {
                 system("cls");
                 std::cerr
