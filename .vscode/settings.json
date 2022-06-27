@@ -42,5 +42,17 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\Abir_\\Code\\GitHub\\StudyFolderOrganizer\\bin",
+            "binaryPath": "c:\\Users\\Abir_\\Code\\GitHub\\StudyFolderOrganizer\\bin\\StudyFolderOrganizer.exe",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "c:/Users/Abir_/Code/GitHub/StudyFolderOrganizer",
+            "binaryPath": "c:\\Users\\Abir_\\Code\\GitHub\\StudyFolderOrganizer\\bin\\StudyFolderOrganizer.exe",
+            "binaryArgs": []
+        }
+    ]
 }

@@ -34,3 +34,4 @@
 
 # Logs
 *.log
+.vscode/launch.json
