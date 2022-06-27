@@ -48,7 +48,7 @@ void home() {
     switch (choice) {
     case 1: {
         system("cls");
-        std::cout << std::setw(80) << std::setfill(' ') << "Create Mode";
+        alib::decorateMe("Create Mode", 1, "+", true);
         std::cout << std::endl;
 
         driveTaker();
